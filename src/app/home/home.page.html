@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <p class='title'>Movie Quotes</p>
+  <p class='question'>Quote {{questionCounter}}/{{questions.length}}:
+    What is the movie of this famous quote?
+  </p>
+  <p class='quote'>
+    <ion-icon name="chatbox-ellipses-outline"></ion-icon>"{{ activeQuestion.quote }}"
+  </p>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-radio-group>
+      <ion-item *ngFor="let option of activeQuestion.options; let i=index">
+        <ion-label class='option'>{{option}}</ion-label>
+        <ion-radio *ngIf=!isCorrect (click)="checkOption(i, activeQuestion)">
+        </ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-label>{{feedback}}</ion-label>
+ 
+  <img *ngIf=isCorrect src="../assets/imgs/projector.png"
+    (click)="setQuestion()" tappable />
 </ion-content>
