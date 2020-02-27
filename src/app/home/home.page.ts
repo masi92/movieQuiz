@@ -59,20 +59,48 @@ export class HomePage implements OnInit {
   } 
   ngOnInit() {
     this.questions = [{
-      quote: 'here\'s Johnny',
+      quote: 'According to Master Yoda, how many Sith are always out there?',
       options: [
-        'The Evil Dead',
-        'The Exorcist',
-        'The Shining'],
+        '1',
+        '3',
+        '2',
+        '4'],
         correctOption: 2
     },
     {
-      quote: 'You talkin\' to me?',
+      quote: 'Who killed Jabba?',
       options: [
-        'Godfather',
-        'Goodfellas',
-        'Raging Bull',
-        'Taxi Driver'],
+        'Han Solo',
+        'C-3PO',
+        'Luke Skywalker',
+        'Princes Leia'],
+      correctOption: 3
+    },
+    {
+      quote: 'Which furry species lives on the forest moon of Endor?',
+      options: [
+        'Wookiees',
+        'Hutts',
+        'Ewoks',
+        'Jawas'],
+      correctOption: 2
+    },
+    {
+      quote: 'Who is Boba Fett’s father?',
+      options: [
+        'Bango Fett',
+        'Jango Fett',
+        'Dango Fett',
+        'Rango fett'],
+      correctOption: 1
+    },
+    {
+      quote: 'Who built C-3PO?',
+      options: [
+        'Luke',
+        'Obiwan',
+        'Yoda',
+        'Anakin'],
       correctOption: 3
       }
     ];
