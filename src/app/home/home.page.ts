@@ -31,7 +31,7 @@ export class HomePage implements OnInit {
       this.endTime = new Date();
       this.duration = this.endTime.getTime() - this.startTime.getTime();
       this.router.navigateByUrl('result/' + this.duration);
-      //this.ngOnInit();
+      this.ngOnInit();
       console.log('loppu');
     } else {
       this.optionCounter = 0;
@@ -58,6 +58,13 @@ export class HomePage implements OnInit {
     }
   } 
   ngOnInit() {
+    this.getQuestions();
+    this.questionCounter = 0;
+    this.setQuestion();
+    this.startTime = new Date();
+  }
+
+  getQuestions() {
     this.questions = [{
       quote: 'According to Master Yoda, how many Sith are always out there?',
       options: [
@@ -104,14 +111,11 @@ export class HomePage implements OnInit {
       correctOption: 3
       }
     ];
-    //this.questionCounter = 0;
-    this.setQuestion();
-    this.startTime = new Date();
 
-    
   }
 
 
 
   constructor(public router: Router) {}
+
 }
